@@ -11,3 +11,8 @@ export function unenrollUserFromCourse(userId, courseId) {
     );
 }
 
+
+export function findAllEnrollments(userId, courseId) {
+    return Database.enrollments;
+}
+
