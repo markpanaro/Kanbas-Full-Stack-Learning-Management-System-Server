@@ -5,6 +5,12 @@ export default function AssignmentRoutes(app) {
         const assignments = dao.findAllAssignments();
         res.send(assignments);
     });
-    
+
+    app.delete("/api/assignments/:assignmentId", async (req, res) => {
+        const { assignmentId } = req.params;
+        const status = await dao.deleteAssignment(assignmentId);
+        res.send(status);
+    });
+
 }
 
