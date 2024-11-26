@@ -4,4 +4,5 @@ import assignments from "./assignments.js";
 import users from "./users-fa24.js";
 import enrollments from "./enrollments.js";
 import quizzes from "./quizzes.js";
-export default { courses, modules, assignments, users, enrollments, quizzes };
+import grades from "./grades.js";
+export default { courses, modules, assignments, users, enrollments, quizzes, grades };
