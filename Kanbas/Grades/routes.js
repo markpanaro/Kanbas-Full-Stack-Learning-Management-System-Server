@@ -5,6 +5,7 @@ export default function GradesRoutes(app) {
     app.get("/api/grades/:quizId", async (req, res) => {
         const { quizId } = req.params;
         const currentUser = req.session["currentUser"];
+        
         const grade = await dao.findQuizGradeForUser(currentUser._id, quizId);
         res.send(grade);
     });
@@ -17,7 +18,7 @@ export default function GradesRoutes(app) {
             quizId: quizId,
             userId: currentUser._id,
         };
-        console.log(currentUser);
+        
         currentUser
         const newGrade = dao.createGrade(grade);//(currentUser._id, quizId);
         res.json(newGrade);
