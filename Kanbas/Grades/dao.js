@@ -1,5 +1,5 @@
 import Database from "../Database/index.js";
-
+import model from "./model.js";
 
 export function findAllGrades(userId, courseId) {
     return Database.grades;
@@ -7,22 +7,28 @@ export function findAllGrades(userId, courseId) {
 
 
 export function findQuizGradeForUser(userId, quizId) {
-    const { grades } = Database;
+    return model.find({ user: userId, quiz: quizId });
 
-    const quizGrade = grades.filter((grade) =>
-        grade.userId === userId && grade.quizId === quizId);
+    //const { grades } = Database;
 
-    return quizGrade;
+    //const quizGrade = grades.filter((grade) =>
+    //    grade.userId === userId && grade.quizId === quizId);
+
+    //return quizGrade;
 }
 export function createGrade(grade) {
-    const newGrade = { ...grade, _id: Date.now().toString() };
-    Database.grades = [...Database.grades, newGrade];
-    return newGrade;
+    delete grade._id
+    return model.create(grade);
+    //const newGrade = { ...grade, _id: Date.now().toString() };
+    //Database.grades = [...Database.grades, newGrade];
+    //return newGrade;
 }
 
+//export function updateGrade(gradeId, gradeUpdates) {
 export function updateGrade(gradeId, gradeUpdates) {
-    const { grades } = Database;
-    const grade = grades.find((grade) => grade._id === gradeId);
-    Object.assign(grade, gradeUpdates);
-    return grade;
+    return model.updateOne({ _id: gradeId }, gradeUpdates);
+    //const { grades } = Database;
+    //const grade = grades.find((grade) => grade._id === gradeId);
+    //Object.assign(grade, gradeUpdates);
+    //return grade;
 }
