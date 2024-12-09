@@ -17,6 +17,7 @@ const schema = new mongoose.Schema(
                         isCorrect: Boolean,
                     },
                 ],
+                answers: [String],
                 _id: String,
             },
         ],
