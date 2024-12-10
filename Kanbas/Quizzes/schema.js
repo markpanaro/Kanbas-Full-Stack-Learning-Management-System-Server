@@ -11,6 +11,7 @@ const schema = new mongoose.Schema(
             {
                 title: String,
                 points: Number,
+                body: String,
                 choices: [
                     {
                         text: String,
