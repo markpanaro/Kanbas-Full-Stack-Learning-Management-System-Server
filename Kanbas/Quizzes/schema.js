@@ -7,6 +7,7 @@ const schema = new mongoose.Schema(
         available: Date,
         due: Date,
         points: Number,
+        published: Boolean,
         questions: [
             {
                 title: String,
