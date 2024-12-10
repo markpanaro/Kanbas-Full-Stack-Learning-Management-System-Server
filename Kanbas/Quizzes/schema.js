@@ -8,6 +8,12 @@ const schema = new mongoose.Schema(
         due: Date,
         points: Number,
         published: Boolean,
+        type: String,
+        instructions: String,
+        group: String,
+        time: Number,
+        shuffle: Boolean,
+
         questions: [
             {
                 title: String,
