@@ -26,6 +26,7 @@ export function createGrade(grade) {
 
 //export function updateGrade(gradeId, gradeUpdates) {
 export function updateGrade(gradeId, gradeUpdates) {
+    
     return model.updateOne({ _id: gradeId }, gradeUpdates);
     //const { grades } = Database;
     //const grade = grades.find((grade) => grade._id === gradeId);

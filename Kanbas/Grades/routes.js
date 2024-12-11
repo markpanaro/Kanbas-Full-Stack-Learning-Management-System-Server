@@ -24,11 +24,12 @@ export default function GradesRoutes(app) {
         res.json(newGrade);
     });
 
-    app.put("/api/grades", (req, res) => {
-        const { quizId } = req.params;
+    app.put("/api/grades/:gradeId", async (req, res) => {
+        const { gradeId } = req.params;
         const userId = req.session["currentUser"]._id;
+        //const gradeId = req.body;
         const gradeUpdates = req.body;
-        const status = dao.updateGrade(gradeId, gradeUpdates);
+        const status = await dao.updateGrade(gradeId, gradeUpdates);
         res.send(status);
     });
     
