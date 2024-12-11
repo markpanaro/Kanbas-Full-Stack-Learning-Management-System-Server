@@ -14,6 +14,7 @@ const schema = new mongoose.Schema(
         time: Number,
         shuffle: Boolean,
         showAnswers: Boolean,
+        allowMultipleAttempts: Boolean,
         attempts: Number,
         password: String,
         oneAtTime: Boolean,
