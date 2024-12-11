@@ -13,6 +13,7 @@ const schema = new mongoose.Schema(
         */
         answers: mongoose.Schema.Types.Mixed,
         score: Number,
+        remainingAttempts: Number,
     },
     { collection: "grades" }
 );
