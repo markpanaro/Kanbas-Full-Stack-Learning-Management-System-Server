@@ -13,6 +13,12 @@ const schema = new mongoose.Schema(
         group: String,
         time: Number,
         shuffle: Boolean,
+        showAnswers: Boolean,
+        attempts: Number,
+        password: String,
+        oneAtTime: Boolean,
+        webcam: Boolean,
+        lockQuestions: Boolean,
 
         questions: [
             {
